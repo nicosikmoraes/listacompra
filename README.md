@@ -1,7 +1,7 @@
 # Create by Nicolas Siqueira Moraes
 This project is my first interaction with angular. 
 
-i made a shopping list and also a calculator, the calculator ain't runnig by default.
+i made a shopping list and also a calculator, the calculator ain't running by default.
 
 #How to start
   - Clone the repository with `git clone`
