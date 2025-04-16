@@ -3,7 +3,7 @@ This project is my first interaction with angular.
 
 i made a shopping list and also a calculator, the calculator ain't running by default.
 
-#How to start
+# How to start
   - Clone the repository with `git clone`
   - Open the project on Visual Studio Code
   - Open a terminal in your operation system or on VS Code pointing to the root project
