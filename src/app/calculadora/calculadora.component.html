@@ -1,0 +1,36 @@
+<div class=" container">
+        <div class="form-box"> 
+                    <!-- Transformei esse formulário em um controlado pelo angular pelo #frm="ngForm".-->
+                <form #frm="ngForm" (ngSubmit)="calcularResultado()">
+                    <h2>Calculadora</h2> 
+                    <label for="numero1"> Primeiro valor </label>
+                    
+                    <input type="number" name="numero1" id="numero1" [(ngModel)]="numero1">
+
+                    <label  for="numero2"> Segundo valor </label>
+                                                           
+                    <input  type="number" name="numero1" id="numero2" [(ngModel)]="numero2">
+
+                        <!-- Agora o botão vai fazer o submit e o formuláriuo que vai chamar a função -->
+                    <button type="submit">Resultado</button>
+                </form>
+                <!-- O formulário só pode ter um submit. -->  
+
+                    <!-- Outra forma de usar o if -->
+                        <div class="result-display" *ngIf="resultado">
+                            <p>Seu resultado está abaixo:</p>
+                        </div>
+
+
+                <!-- Vamos criar uma condição para que só apareça o resultado quando o botão for clicado -->
+                    @if(resultado){  <!-- Se resultado for diferente de 0, de null ou de undefined ele será verdadeiro. -->
+                        <div class="result-display">
+                            <!-- Usa essas chaves duplas para referencias váriaveis do typescript -->
+                            <p>Resultado: <span id="result">{{ resultado  }}</span></p>
+                        </div>
+                    }
+
+                
+        </div>
+
+</div>

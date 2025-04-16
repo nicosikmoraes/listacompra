@@ -1,0 +1,35 @@
+<div class="container">
+    <h1> Lista de compras </h1>
+
+    <form class="add-item-form" #frm="ngForm" (ngSubmit)="addItem()">
+            <input type="text" id="item" name="getItem" placeholder="Digite o nome do item"[(ngModel)]="getItem">
+            <button type="submit">Adicionar</button>
+
+            <button type="button" (click)="limparLista()">Limpar lista</button>
+    </form>
+
+    <table>
+        <thead>
+            <th>#</th>
+            <th>Item</th>
+            <th></th>
+        </thead>
+        <tbody>
+            @for( elemento of lista; track elemento.id){
+                <tr>
+                    <td>{{ elemento.id }}</td>
+                    <!-- O [ngClass] serve para adicionar uma classe de forma dinâmica, ou seja a class só ser implementado se o elemento.comprado for true. -->
+                    <td><span [ngClass]="{'item-riscado': elemento.comprado}">
+                        {{ elemento.nome }}
+                    </span></td>
+                    <td>
+                         <input type="checkbox"
+                          (click)="riscarItem(elemento)"
+                           [checked]="elemento.comprado">
+                     </td> <!-- O [checked] significa que quando o elemento.comprado for verdadeiro ele vai estar marcado. -->
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>
